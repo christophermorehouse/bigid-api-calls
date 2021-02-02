@@ -1,0 +1,2159 @@
+{
+	"info": {
+		"_postman_id": "48d2f011-181f-4d42-a279-3d12553d0cff",
+		"name": "BIGIDPostmanCallsWithVar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DSAR",
+			"item": [
+				{
+					"name": "GET All DSAR Profiles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/sar/profiles",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"sar",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST a new DSAR to BigID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"callbackUrl\": \"https://169.254.86.176\",\n    \"userDetails\": {\n        \"userId\": \"da02f529-741d-405a-bf8d-0ef1d9c37b07\",\n        \"attributes\": {\n            \"guid\": \"da02f529-741d-405a-bf8d-0ef1d9c37b07\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/sar/reports",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"sar",
+								"reports"
+							]
+						},
+						"description": "Use your auth token in the header, make a POST request to the following endpoint.\n\nhttps://169.254.86.176/api/v1/sar/reports\n\nIn the body, make sure it looks like this:\n\n{\n\t\"callbackUrl\": \"https://xxx.xxx.xxx.xxx\",\n\t\"userDetails\": {\n\t\t\"userId\": \"<user_unique_id>\",\n\t\t\"attributes\": {\n\t\t\t\"guid\": \"<user_guid>\",\n\t\t\t\"email\": \"<user_email>\",\n\t\t\t...\n\t\t}\n\t}\n}\n\nNOTE: The \"callbackUrl\" is not required, mostly used to notify serviceNow if call originated from there. To have a Display Name included in the DSAR, make sure to provide a \"displayName\" parameter after the \"userId\"."
+					},
+					"response": []
+				},
+				{
+					"name": "GET jit records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/jit-records",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"jit-records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET jit scans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/jit_scans",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"jit_scans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET jit records count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/jit-records/count",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"jit-records",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET jit records csv report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/jit-records/csvReport",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"jit-records",
+								"csvReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET search entity sources",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/sar/search/entity-sources",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"sar",
+								"search",
+								"entity-sources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET sar search cache",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/sar/search/cache",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"sar",
+								"search",
+								"cache"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET sar general info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/sar/general-info",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"sar",
+								"general-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET sar attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/sar/attributes",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"sar",
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET sar bulk csv",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/sar/reports/bulk/csv-format",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"sar",
+								"reports",
+								"bulk",
+								"csv-format"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET sar config",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/sar/config",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"sar",
+								"config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DSAR",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJiaWdpZCIsInR5cGUiOiJhY2Nlc3MtdG9rZW4iLCJyb2xlSWRzIjpbIjVkNWYyZTM5ZGIwN2U3MDAxYWE1MWUyZiJdLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1NjcwMTczNzIsImV4cCI6MTU2NzEwMzc3Mn0.BOvSrtj_qgvm5U24QN-KUYD8GQHKTPOBxl2ax0eHBp4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/sar/reports/5d5f4fc06c425ba9255b2fec/personal-info",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"sar",
+								"reports",
+								"5d5f4fc06c425ba9255b2fec",
+								"personal-info"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "GET confidence levels -- EMPTY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Failed Object Report v2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/failed-object-report",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"failed-object-report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Scanned Files Report v2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/scanned-files-report",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"scanned-files-report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Object Summaries By Type v2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/object-summaries/by-type",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"object-summaries",
+								"by-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Object Summaries Trend v2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/object-summaries/trend",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"object-summaries",
+								"trend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Object Summaries By Data Source v2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/object-summaries/by-data-source",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"object-summaries",
+								"by-data-source"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Files Attribute Distribution Report v2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/files-attribute-distribution-report",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"files-attribute-distribution-report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Data Custodian Report v2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/data-custodian-report",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"data-custodian-report"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Inventory Stats",
+			"item": [
+				{
+					"name": "GET data categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/data_categories",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"data_categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/attributes",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET classifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/classifications",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"classifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "GET pii records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/piiRecords",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"piiRecords"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET pii record locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/piiRecordLocations",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"piiRecordLocations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET pii records count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/piiRecords/count",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"piiRecords",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET pii record objects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/piiRecords/objects",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"piiRecords",
+								"objects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET pii findings count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/piiFindings/count",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"piiFindings",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET pii finding summaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/piiFindingSummaries",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"piiFindingSummaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET pii records correlation summaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/piiRecordsCorrelationSummaries",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"piiRecordsCorrelationSummaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET identity locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/identityLocations",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"identityLocations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET identity locations extended",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/identityLocationsExtended",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"identityLocationsExtended"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET identities count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/identities/count",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"identities",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET entity summaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/entitySummaries",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"entitySummaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET entity summaries scoped",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/entitySummariesScoped",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"entitySummariesScoped"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scanned attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/scanned-attributes",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"scanned-attributes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET pii investigations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/piiInvestigations",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"piiInvestigations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET pii investigations count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/piiInvestigationsCount",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"piiInvestigationsCount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Correlation",
+			"item": [
+				{
+					"name": "Get collections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/lineage/collections?filter=attribute=",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"lineage",
+								"collections"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "attribute="
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cluster",
+			"item": [
+				{
+					"name": "GET clusters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Results",
+			"item": [
+				{
+					"name": "GET scan results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/scan_results",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"scan_results"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan results files (download)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/download-scan-results-files",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"download-scan-results-files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET collections metadata",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/collectionsMetadata",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"collectionsMetadata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET classification summaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/classificationSummaries",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"classificationSummaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET collections metadata treemap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/collection_metadata/treemap",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"collection_metadata",
+								"treemap"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET attributes summary snapshot",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/attributes-summary-snapshots",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"attributes-summary-snapshots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET pii summary snapshots",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/pii-summary-snapshots",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"pii-summary-snapshots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan result column filters -- EMPTY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan result csv paging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan result json paging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan result csv stream",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan result json stream",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan result json stream full",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Identities",
+			"item": [
+				{
+					"name": "GET id connections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/id_connections",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"id_connections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET id connection tasks users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/id_connections_tasks/getUsers",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"id_connections_tasks",
+								"getUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET id resolution relations -- EMPTY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lineage",
+			"item": [
+				{
+					"name": "GET lineage tree",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/lineage/tree",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"lineage",
+								"tree"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET lineage attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/lineage/attributes",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"lineage",
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scans",
+			"item": [
+				{
+					"name": "GET scans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/scans",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"scans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan statuses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/scans/status",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"scans",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan results files (ZIP)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/scan-result/stream/zip",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"scan-result",
+								"stream",
+								"zip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET scan results files (CSV)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/scan-result/stream/csv",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"scan-result",
+								"stream",
+								"csv"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "PUT tasks (resolved)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"resolved\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/tasks?status=open",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "open"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Tasks Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/tasks/count",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"tasks",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}{{rootPath}}/tasks",
+							"protocol": "https",
+							"host": [
+								"{{host}}{{rootPath}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Administration",
+			"item": [
+				{
+					"name": "Data Sources",
+					"item": [
+						{
+							"name": "GET ds connections",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/ds_connections",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"ds_connections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DEL ds connections",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/ds_connections/this.is.bad%2F%2Ffor.many%2Freasons",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"ds_connections",
+										"this.is.bad%2F%2Ffor.many%2Freasons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST ds connections",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{ \"ds_connection\":{\n        \"name\": \"DS NAME HERE\",\n        \"rdb_url\": \"1.1.1.1:3306\",\n        \"enabled\": \"yes\",\n        \"credential_id\": \"mysql-ubu18\",\n        \"enrichment_is_enabled\": true,\n        \"rdb_comma_sep_table_list\": \"authentication,employment,medical,private\",\n        \"test_timestamp\": \"2020-07-14T13:47:23.047Z\",\n        \"created_at\": \"2020-08-17T15:15:28.492Z\",\n        \"is_credential\": true,\n        \"is_idsor_supported\": true,\n        \"location\": \"Texas\",\n        \"numberOfParsingThreads\": \"5\",\n        \"rdb_name\": \"sample_data\",\n        \"type\": \"rdb-mysql\"\n    }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/ds_connections",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"ds_connections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ds catalog",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/catalog/dataSources",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"catalog",
+										"dataSources"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ds catalog containers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/catalog/dataSources/containers",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"catalog",
+										"dataSources",
+										"containers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ds catalog container objects",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/catalog/dataSources/containers/objects",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"catalog",
+										"dataSources",
+										"containers",
+										"objects"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ds catalog container object fields",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/catalog/dataSources/containers/objects/fields",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"catalog",
+										"dataSources",
+										"containers",
+										"objects",
+										"fields"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ds summary snapshot",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/datasources-summary-snapshots",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"datasources-summary-snapshots"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Entity Sources",
+					"item": [
+						{
+							"name": "GET - es connection",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/id_connections",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"id_connections"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Seconday Sources",
+					"item": [
+						{
+							"name": "GET - Secondary Sources",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Applications",
+					"item": [
+						{
+							"name": "Get - Applications",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/applications",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"applications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get - Applications Copy",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"app_account_name\": \"Some Account 12\",\n\"data_mapping_classifier\": \"<1=Classifier, 2=\",\n\"filter\": \"\",\n\"location\": \"\",\n\"name\": \"Something\",\n\"owner_email\": \"\",\n\"owner_name\": \"\",\n\"owner_phone\": \"\",\n\"security_tier\": \"1\",\n\"source_ip\": \"ActivitySource\",\n\"target_data_source\": \"Scan-Gdrive\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/applications/<Application Name Here>",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"applications",
+										"<Application Name Here>"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Classifiers",
+					"item": [
+						{
+							"name": "GET Classifiers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/classifications",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"classifications"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Credentials",
+					"item": [
+						{
+							"name": "PUT - Credentials (Change Password)",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"type": "text",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n\t\"password\": \"<NEW PASSWORD HERE>\", \n\t\"isPasswordChanged\": true\n\t\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/credentials/<Cred name Here>",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"credentials",
+										"<Cred name Here>"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET - Credentials",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/credentials",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"credentials"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DEL - Credentials",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/credentials/<Cred Name Here>",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"credentials",
+										"<Cred Name Here>"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - Credentials",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"type": "text",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n\t\"credentil_id\": \"<Credential Name>\",\n\t\"username\": \"<DB UserName>\",\n\t\"password\": \"<DB PASSWORD>\",\n\t\"type\": \"simple\"\n\t\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/credentials/",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"credentials",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Advanced Tool",
+					"item": [
+						{
+							"name": "Logs",
+							"item": [
+								{
+									"name": "GET services logs",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{host}}{{rootPath}}/services-logs",
+											"protocol": "https",
+											"host": [
+												"{{host}}{{rootPath}}"
+											],
+											"path": [
+												"services-logs"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET scanner logs",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{host}}{{rootPath}}/logs/scanner",
+											"protocol": "https",
+											"host": [
+												"{{host}}{{rootPath}}"
+											],
+											"path": [
+												"logs",
+												"scanner"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET corr-new logs",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{host}}{{rootPath}}/logs/corr-new",
+											"protocol": "https",
+											"host": [
+												"{{host}}{{rootPath}}"
+											],
+											"path": [
+												"logs",
+												"corr-new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET orch logs",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{host}}{{rootPath}}/logs/orch",
+											"protocol": "https",
+											"host": [
+												"{{host}}{{rootPath}}"
+											],
+											"path": [
+												"logs",
+												"orch"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET orch2 logs",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{host}}{{rootPath}}/logs/orch2",
+											"protocol": "https",
+											"host": [
+												"{{host}}{{rootPath}}"
+											],
+											"path": [
+												"logs",
+												"orch2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET web logs",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{host}}{{rootPath}}/logs/web",
+											"protocol": "https",
+											"host": [
+												"{{host}}{{rootPath}}"
+											],
+											"path": [
+												"logs",
+												"web"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET audit logs",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{host}}{{rootPath}}/audit-log",
+											"protocol": "https",
+											"host": [
+												"{{host}}{{rootPath}}"
+											],
+											"path": [
+												"audit-log"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET services configuration",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{host}}{{rootPath}}/services-configuration",
+											"protocol": "https",
+											"host": [
+												"{{host}}{{rootPath}}"
+											],
+											"path": [
+												"services-configuration"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "PUT - Services-Status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/health-checks/services-status",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"health-checks",
+										"services-status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DEL - Services-Status (Clear Status)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{host}}{{rootPath}}/health-checks/services-status",
+									"protocol": "https",
+									"host": [
+										"{{host}}{{rootPath}}"
+									],
+									"path": [
+										"health-checks",
+										"services-status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"API_Key\", data.auth_token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{host}}{{rootPath}}/sessions",
+					"protocol": "https",
+					"host": [
+						"{{host}}{{rootPath}}"
+					],
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{API_Key}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "169.254.86.176",
+			"type": "string"
+		},
+		{
+			"key": "rootPath",
+			"value": "/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "{{API_Key}}",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJiaWdpZCIsInR5cGUiOiJhY2Nlc3MtdG9rZW4iLCJyb2xlSWRzIjpbIjVkNWYyZTM5ZGIwN2U3MDAxYWE1MWUyZiJdLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1NjcwMTczNzIsImV4cCI6MTU2NzEwMzc3Mn0.BOvSrtj_qgvm5U24QN-KUYD8GQHKTPOBxl2ax0eHBp4",
+			"type": "string"
+		}
+	]
+}
